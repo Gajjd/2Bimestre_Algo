@@ -5,9 +5,11 @@ removeu = False
 
 while opcao != "f":
     opcao = input("Deseja adicionar um item a lista? (s para sim) (n para não) (f para finalizar): ").lower()
+    
     if opcao == "s":
         item = input("Digite o nome do item: ")
         lista.append(item)
+        print(f"O item ({item}) foi adicionado a lista com sucesso")
         
     elif opcao == "n":
         if len(lista) != 0:
@@ -17,12 +19,14 @@ while opcao != "f":
                     if item == i:
                         lista.remove(item)
                         removeu = True
+                        print(f"O item ({item}) foi removido da lista com sucesso")
                 if removeu == False:
                     print("Verifique as acentuações, maiúsculas e minúsculas")
             removeu = False
         else:
             print("A lista ainda não possui um item.")
+            
+            
     elif opcao == "f":
         print("A lista ficou assim:")
         print(lista)
-        
