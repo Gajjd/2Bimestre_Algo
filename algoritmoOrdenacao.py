@@ -1,14 +1,17 @@
 lista = [1, 3, 5, 6, 7, 0, 2, 4, 6, 8]
 
+# # Jeitos de fazer a lista ficar ordenada:
+
+# # 1:
 # listaOrdenada = sorted(lista)
 # print(listaOrdenada)
+#________________________________________
 
-# # Ou
-
+# # 2:
 # print(sorted(lista))
+#________________________________________
 
-# # Ou
-
+# # 3:
 # for i in range(len(lista)):
 #     for j in range(len(lista) - 1):
 #         if lista[j] > lista[j + 1]:
@@ -17,18 +20,19 @@ lista = [1, 3, 5, 6, 7, 0, 2, 4, 6, 8]
 #             lista[j+1] = troca
             
 # print(lista)
+#________________________________________
 
-# Ou
+# 4:
+# for i in range(len(lista) - 1, 0, -1):
+#     maiorIndice = 0
+#     for j in range (1, i + 1):
+#         if lista[j] > lista[maiorIndice]:
+#             maiorIndice = j
+#     troca = lista[i]
+#     lista[i] = lista[maiorIndice]
+#     lista[maiorIndice] = troca
 
-for i in range(len(lista)):
-    maior = i
-    for j in range(i + 1, len(lista)):
-        if lista[j] < lista[maior]:
-            maior = j
-            
-    troca = lista[i]
-    lista[i] = lista[maior]
-    lista[maior] = troca
+#     print(lista)
 
-print(lista)
-
+# print(f"Lista ordenada: {lista}")
+#________________________________________
