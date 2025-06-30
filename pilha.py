@@ -3,7 +3,7 @@ class No:
         self.valor = valor
         self.next = None
         
-class pilha:
+class Pilha:
     def __init__(self) -> None:
         self.top = None
         self.size = 0
@@ -23,15 +23,43 @@ class pilha:
                 no = no.next
             return "\n-----\n".join(pilha_listaem)
         else:
-            return "A pilha está vazia"    
+            return "A pilha está vazia"   
+        
+    def pop(self):
+        if(self.size > 0):
+            self.top = self.top.next
+            self.size -= 1  
+            
+    def topo(self):
+        if self.top is not None:
+            return self.top.valor
+        else:
+            return "A pilha está vazia"
+            
+    def tamanho(self):
+        return self.size    
+    
           
 if __name__ == "__main__":
-    pilha = pilha()
+    pilha = Pilha()
     print(pilha)
     pilha.push(No(0))
+    print(f"O tamanho da pilha é {pilha.tamanho()}")
+    print(f"Elemento topo {pilha.topo()}")
     pilha.push(No(2))
+    print(f"O tamanho da pilha é {pilha.tamanho()}")
+    print(f"Elemento topo {pilha.topo()}")
     pilha.push(No(3))
+    print(f"O tamanho da pilha é {pilha.tamanho()}")
+    print(f"Elemento topo {pilha.topo()}")
     pilha.push(No(4))
+    print(f"O tamanho da pilha é {pilha.tamanho()}")
+    print(f"Elemento topo {pilha.topo()}")
     pilha.push(No(5))
+    print(f"O tamanho da pilha é {pilha.tamanho()}")
+    print(f"Elemento topo {pilha.topo()}")
     pilha.push(No(9))
+    print(f"O tamanho da pilha é {pilha.tamanho()}")
+    print(f"Elemento topo {pilha.topo()}")
+    pilha.pop()
     print(pilha)
